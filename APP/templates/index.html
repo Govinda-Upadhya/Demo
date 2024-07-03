@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Samtse Ferro Alloy Limited{% endblock %}
+{%load static%}
+{% block content %}
+<!-- Hero Page Start -->
+ {% for home in home %}
+ {% if home %}
+<div class="header-carousel owl-carousel">
+    <div class="header-carousel-item">
+        <img src="{{home.hero_image.url}}" class="img-fluid w-100" alt="Image">
+        <div class="carousel-caption">
+            <div class="carousel-caption-content p-3">
+                <h1 class="display-1 text-capitalize text-white mb-4">{{home.hero_title}}</h1>
+                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                </p>
+                <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="{%url 'about' %}">More Information</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+</div>
+<!-- Navbar & Hero End -->
+
+<!-- Home page -->
+<div class="container-fluid about py-5">
+    <div class="container py-5">
+        <div class="section-title mb-0">
+            <div class="sub-style px-3 mb-0">
+                <h4 class="sub-title pe-3 mb-0">Home</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="about-img">
+                    <img src="{{home.home_image.url}}" class="img-fluid rounded h-100 w-100" style="object-fit: cover;" alt="Image">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="section-title text-start mb-5">
+                    <h1 class="display-3">Welcome to Ferro Alloy Limited Page</h1>
+                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
+                        at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
+                        maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                    <div class="mb-4">
+                        {% for bullet_point in home.bullet_points.all %}
+                        <p class="text-secondary"><img src="{% static 'APP/img/icons/bulletpoint.png' %}" class="bulletpoint">{{bullet_point.point}}</p>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Home page End -->
+
+<!-- Statistics Start -->
+<div class="container-fluid about py-5">
+    <div class="container py-5">
+        <div class="section-title mb-0">
+            <div class="sub-style px-3 mb-0">
+                <h4 class="sub-title pe-3 mb-0">Statistics</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid feature">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-5 mx-4">
+                <div class="row-cols-1 feature-item p-4">
+                    <div class="col-12">
+                        <div class="feature-icon d-flex justify-content-center mb-4">
+                            <div class="p-3 d-inline-flex bg-white rounded">
+                                <img src="{% static 'APP/img/icons/building.png' %}">
+                            </div>
+                        </div>
+                        <div class="feature-content d-flex flex-column">
+                            <h5 class="mb-4 text-center">Established</h5>
+                            <h3 class="mb-0 text-center">{{home.statistic_estalblished}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-5 mx-4">
+                <div class="row-cols-1 feature-item p-4">
+                    <div class="col-12">
+                        <div class="feature-icon d-flex justify-content-center mb-4">
+                            <div class="p-3 d-inline-flex bg-white rounded">
+                                <img src="{% static 'APP/img/icons/smile.png' %}">
+                            </div>
+                        </div>
+                        <div class="feature-content d-flex flex-column">
+                            <h5 class="mb-4 text-center">Happy Clients</h5>
+                            <h3 class="mb-0 text-center">{{home.statistic_happy_client}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-5 mx-4">
+                <div class="row-cols-1 feature-item p-4">
+                    <div class="col-12">
+                        <div class="feature-icon d-flex justify-content-center mb-4">
+                            <div class="p-3 d-inline-flex bg-white rounded">
+                                <img src="{% static 'APP/img/icons/factory.png' %}">
+                            </div>
+                        </div>
+                        <div class="feature-content d-flex flex-column">
+                            <h5 class="mb-4 text-center">Production/Annum</h5>
+                            <h3 class="mb-0 text-center">{{home.statistic_production}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center mb-5">
+        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">More Details</a>
+    </div>
+</div>
+
+{%endif%}
+{%endfor%}
+<!-- Statistic End -->
+
+{% endblock %}
