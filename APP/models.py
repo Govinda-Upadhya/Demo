@@ -38,7 +38,7 @@ class Production_capcity(models.Model):
 class Team_Member(models.Model):
     name = models.CharField(max_length=200)
     role = models.CharField(max_length=200)
-    phone = models.IntegerField(max_length=200,blank=True,null=True)
+    phone = models.IntegerField(blank=True,null=True)
     image = models.ImageField(upload_to='image/')
     facebook = models.URLField(max_length=200,blank=True,null=True)
     email = models.EmailField(max_length=300,blank=True,null=True)
@@ -62,6 +62,7 @@ class Career(models.Model):
 
 class Announcement(models.Model):
     announcement = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='image/',blank=True, null=True)
     date = models.DateField(auto_now_add=True)
     hiring_process = models.TextField()
     descriptions = models.TextField(blank=True,null=True)

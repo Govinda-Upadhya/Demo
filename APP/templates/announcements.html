@@ -93,6 +93,11 @@
             {%for announcement in announcement %}
             <div class="col-md-6 col-lg-6 col-xl-4">
                 <div class="blog-item rounded">
+                    <div class="blog-img">
+                        {% if announcement.image %}
+                        <img src="{{announcement.image.url}}" class="img-fluid w-100" alt="Image">
+                        {%endif%}
+                    </div>
                     <div class="blog-centent p-4">
                         <div class="d-flex justify-content-between mb-4">
                             <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i> {{announcement.date}}
